@@ -1,4 +1,4 @@
-Here is a complete version of your `README.md` with **LaTeX math** properly embedded in Markdown syntax. You can **copy-paste this directly** into your `README.md` file. Just be aware that **GitHub's web interface does not render LaTeX**, but **Jupyter Notebooks and GitHub Pages with MathJax do**.
+
 
 ---
 
