@@ -7,7 +7,7 @@ This project implements a movie recommender system using **Weighted Matrix Facto
 
 ---
 
-## ✨ Features
+## Features
 
 - **Weighted Matrix Factorization (WMF):** Learns user and movie embeddings, accounting for both observed (rated) and unobserved (unrated) movies.  
 - **Weighted Alternating Least Squares (WALS):** Efficiently optimizes user and item factors.  
@@ -18,7 +18,7 @@ This project implements a movie recommender system using **Weighted Matrix Facto
 - **Learning Curve Visualization:** Tracks training and validation RMSE over iterations.
 
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
 
