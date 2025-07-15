@@ -64,11 +64,8 @@ The recommender system is implemented in the `WeightedMatrixFactorization` class
 
 WMF minimizes the following objective:
 
-$$
-\sum_{(i,j) \in \text{Obs}} (r_{ij} - \mathbf{u}_i^\top \mathbf{v}_j)^2 \\
-+ w_0 \sum_{(i,j) \in \text{Nobs}} (\mathbf{u}_i^\top \mathbf{v}_j)^2 \\
-+ \lambda \left( \sum_i \|\mathbf{u}_i\|^2 + \sum_j \|\mathbf{v}_j\|^2 \right)
-$$
+<pre> ``` ∑(i,j)∈Obs (rᵢⱼ - uᵢᵗ vⱼ)² + w₀ ∑(i,j)∈Nobs (uᵢᵗ vⱼ)² + λ ( ∑ᵢ ||uᵢ||² + ∑ⱼ ||vⱼ||² ) ``` </pre>
+
 
 
 Where:
@@ -104,6 +101,4 @@ Repeat until convergence or max iterations.
 
 ```
 
----
 
-```
