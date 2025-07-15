@@ -17,21 +17,6 @@ This project implements a movie recommender system using **Weighted Matrix Facto
 - **Interactive Streamlit UI:** User-friendly web interface.  
 - **Learning Curve Visualization:** Tracks training and validation RMSE over iterations.
 
----
-
-## ⚙️ Configuration
-
-Configure these in `IR-RS.py`:
-
-- `MOVIELENS_URL`: URL for the dataset  
-- `LATENT_FEATURES`: Number of latent factors \( K \)  
-- `W0`: Weight for unobserved ratings \( w_0 \)  
-- `REGULARIZATION_LAMBDA`: Regularization parameter \( \lambda \)  
-- `ITERATIONS`: Number of WALS iterations  
-- `TOP_N_RECOMMENDATIONS`: Number of recommendations to display  
-- `NEW_USER_NUM_RATINGS`: Movies to rate for cold start
-
----
 
 ## 🚀 How to Run
 
