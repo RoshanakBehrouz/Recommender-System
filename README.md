@@ -1,0 +1,110 @@
+Here is a complete version of your `README.md` with **LaTeX math** properly embedded in Markdown syntax. You can **copy-paste this directly** into your `README.md` file. Just be aware that **GitHub's web interface does not render LaTeX**, but **Jupyter Notebooks and GitHub Pages with MathJax do**.
+
+---
+
+````markdown
+# 🎬 Movie Recommender System (Weighted Matrix Factorization)
+
+This project implements a movie recommender system using **Weighted Matrix Factorization (WMF)** with the **MovieLens 100k** dataset. The model is trained using the **Weighted Alternating Least Squares (WALS)** optimization algorithm. The application is built with **Streamlit**, providing an interactive interface for both existing and new users to receive movie recommendations.
+
+---
+
+## ✨ Features
+
+- **Weighted Matrix Factorization (WMF):** Learns user and movie embeddings, accounting for both observed (rated) and unobserved (unrated) movies.  
+- **Weighted Alternating Least Squares (WALS):** Efficiently optimizes user and item factors.  
+- **MovieLens 100k Dataset:** Automatically downloads and uses the MovieLens 100k dataset.  
+- **Existing User Recommendations:** Personalized suggestions based on historical data.  
+- **New User (Cold Start) Recommendations:** Infers preferences using a few initial ratings.  
+- **Interactive Streamlit UI:** User-friendly web interface.  
+- **Learning Curve Visualization:** Tracks training and validation RMSE over iterations.
+
+---
+
+## ⚙️ Configuration
+
+Configure these in `IR-RS.py`:
+
+- `MOVIELENS_URL`: URL for the dataset  
+- `LATENT_FEATURES`: Number of latent factors \( K \)  
+- `W0`: Weight for unobserved ratings \( w_0 \)  
+- `REGULARIZATION_LAMBDA`: Regularization parameter \( \lambda \)  
+- `ITERATIONS`: Number of WALS iterations  
+- `TOP_N_RECOMMENDATIONS`: Number of recommendations to display  
+- `NEW_USER_NUM_RATINGS`: Movies to rate for cold start
+
+---
+
+## 🚀 How to Run
+
+### Prerequisites
+
+- Python 3.7+  
+- pip
+
+### Installation
+
+```bash
+pip install streamlit pandas numpy requests matplotlib seaborn scikit-learn
+````
+
+### Run the App
+
+```bash
+streamlit run IR-RS.py
+```
+
+Then go to [http://localhost:8501](http://localhost:8501)
+
+---
+
+## 📊 Model Details
+
+The recommender system is implemented in the `WeightedMatrixFactorization` class using WMF.
+
+### Objective Function
+
+WMF minimizes the following objective:
+
+$$
+\sum_{(i,j) \in \text{Obs}} (r_{ij} - \mathbf{u}_i^\top \mathbf{v}_j)^2 
++ w_0 \sum_{(i,j) \in \text{Nobs}} (\mathbf{u}_i^\top \mathbf{v}_j)^2 
++ \lambda \left( \sum_i \|\mathbf{u}_i\|^2 + \sum_j \|\mathbf{v}_j\|^2 \right)
+$$
+
+Where:
+
+* $r_{ij}$: rating of user $i$ for movie $j$
+* $\mathbf{u}_i$: latent factor for user $i$
+* $\mathbf{v}_j$: latent factor for movie $j$
+* $\text{Obs}$: observed (rated) pairs
+* $\text{Nobs}$: unobserved (unrated) pairs
+* $w_0$: weight for unobserved pairs
+* $\lambda$: regularization parameter
+
+### Training with WALS
+
+1. **Fix Item Factors $\mathbf{V}$**
+   Solve for user vectors $\mathbf{u}_i$
+
+2. **Fix User Factors $\mathbf{U}$**
+   Solve for item vectors $\mathbf{v}_j$
+
+Repeat until convergence or max iterations.
+
+---
+
+## 📁 Project Structure
+
+* `IR-RS.py`: Main script including:
+
+  * Streamlit UI
+  * Data loading
+  * WMF model
+  * Recommendation logic
+
+```
+
+---
+
+```
