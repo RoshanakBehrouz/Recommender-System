@@ -70,7 +70,7 @@ WMF minimizes the following objective:
 
 Where:
 
-* $r_{ij}$: rating of user $i$ for movie $j$
+* $r_{ij}$: rating of user $i$ for movie $j$ ($C_{ij}$- bc of confidence interval I renamed this to r)
 * $\mathbf{u}_i$: latent factor for user $i$
 * $\mathbf{v}_j$: latent factor for movie $j$
 * $\text{Obs}$: observed (rated) pairs
